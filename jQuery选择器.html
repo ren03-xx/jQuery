@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--引入jquery,这里用谷歌cdn代替，也可直接在jquery官网下载js文件引入-->
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js">
+  </script>
+  <script>
+    // alert('hello')
+    $(document).ready(function () {
+      //alert($("ul>li:first").html());
+     //alert($("#a+li").html());
+      // alert($("li:odd").length);
+      //alert($("[id=a]").html());
+      //alert($(":visible").length);
+    });
+  </script>
+</head>
+<body >
+<ul>
+  <li>111</li>
+  <li id="a">222</li>
+  <li>333</li>
+  <li>444</li>
+</ul>
+<!--
+1.基础选择器
+   标签选择器：
+    $("标签名")
+    $("p").html() 获取p标签对象，是jquery对象形式的
+    $("p").length
+
+  类选择器：
+     $(".class值")
+
+  id选择器：
+    $("#id值")
+
+  并集（或）选择器	逗号，
+    $("#id值，.class值")
+
+  交集选择器	连续直接写
+    $("p.lalala").html()  ：选中既是p标签，并且class的值是lalala
+    注意不能出现歧义如$(".lalalap").html()
+
+  全局选择器
+    $("*")
+
+2.层次选择器（只取后面的那些元素）
+  相邻选择器   +
+    $("选择器1+选择器2")
+  同辈选择器    ~
+    $("选择器1~选择器2")
+  后代选择器   空格
+    $("选择器1 选择器2")
+  子代选择器   >
+    $("选择器1>选择器2")
+
+3.属性选择器  [...]
+    $("[属性名]")
+    $("[class]"):选中全部元素中有 class属性的元素
+    $("[属性名=属性值]")
+    $("[class=xx]")
+    $("[class='xx']")
+    $("[class!=x]")	不等于x，包含两种情况：有class，但值不是x，没有class
+    $("[class^=x]")	class以a开头的元素
+    $("[class$=x]")	class以a结尾的元素
+    $("[class*=x]")	class中有a的元素
+
+4.过滤选择器：有过滤选择器的一些方法，和其他函数类型，例如：$("ul>li:first")等价于$("ul>li").first()，有些不同
+  例如，可以$("ul>li:odd") ;  错误$("ul>li").odd()
+  a. 基本过滤选择器（从0开始）
+:first   最开始的哪一个
+:last   最后的一个
+:even   偶数
+:odd   奇数
+:eq(index)    第index个
+:gt(index)   >index的全部元素
+:lt(index)    <index的全部元素
+:not(选择器)    除了...以外
+:header   选中所有的标题元素
+:focus	获取当前焦点的元素
+
+5.可见选择器
+:visible  选取可见的元素
+:hidden   选取不卡件的元素
+-->
+
+
+</body>
+</html>

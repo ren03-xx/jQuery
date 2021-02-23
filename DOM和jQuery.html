@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js">
+  </script>
+  <script>
+    // alert('hello')
+    $(document).ready(function () { //jquery加载函数，也叫初始化函数：当网页中dom元素全部加载(不包含图片，视频)完毕后执行
+      //alert("hello jquery");
+      var $title = $("#color");
+      alert($title.html());
+    });
+    function init() {   //onload是js的初始化函数：当网页中dom元素全部加载(包含图片，视频)完毕后执行
+      // var title = document.getElementById('color');   //通过js拿到的对象成为dom对象
+      // alert(title.innerHTML);
+     // alert("加载中...");
+    }
+  </script>
+</head>
+<body onload="init()">
+<p id="color">你最喜欢的颜色</p>
+<!--
+  dom模型：
+    将html xml等文档结构的标签语言 看成dom模型
+    dom结点有三种类型：
+    元素节点	：<html> <p> <ul>
+    属性节点  :  src  alt
+    文本节点  : 内容
+
+  dom对象：
+    以上三种节点类型的具体对象 就是dom对象
+    使用层面： 凡是JavaScript能够直接操作的对象，就是Dom对象
+    例如：<script>
+            var title = document.getElementById("myTitle"); 通过js就是一个dom对象
+          </script>
+
+  jQuery对象：
+    凡是jQuery能够直接操作的对象，就是jQuery对象
+    例如：var $title = $("#myTitle"); 通过jquery获取到的$titile就是一个jQuery对象
+
+    同样一个元素，既可以成为一个dom对象（JavaScript对象），也可以成为一个jquery对象
+    注意：dom对象只适用于js的各种语法（函数，属性），jquery对象只适用于jquery的各种语法（函数，属性）。
+    dom对象和jquery对象的各自独立
+    例如：title是dom对象，因此可以使用js的属性或方法 title.innerHTML
+    $title是jquery对象，因此可以使用jquery属性或方法 $title.html()
+
+  建议：
+    js对象 直接写title
+    jquery 加$ 例如$title
+
+  dom对象和jquery对象的转换：
+    title.innerHTML;（title -> $title）
+      jquery工厂， $（dom对象）
+    $title.html(); （$title ->title）
+  基础知识：jquery对象默认是一个数组或集合 ；dom对象默认是一个单独的对象
+    数组：jquery对象[0]
+    集合：jquery对象.get(0)</p>
+-->
+</body>
+</html>
